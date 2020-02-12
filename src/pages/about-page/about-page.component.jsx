@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './about.styles.scss';
+import './about-page.styles.scss';
 
 const About = () => <div className="about-page">About Page</div>;
 
