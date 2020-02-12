@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './products.styles.scss';
+import './products-page.styles.scss';
 
 const Products = () => <div className="products-page">Products Page</div>;
 
