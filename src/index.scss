@@ -72,11 +72,10 @@ a {
 	color: var(--c-primary-main);
 	text-decoration: none;
 	cursor: pointer;
-}
-
-a:active,
-a:hover {
-	outline: 0;
+	&:active,
+	&:hover {
+		outline: 0;
+	}
 }
 
 .app-wrapper {

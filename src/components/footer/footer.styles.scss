@@ -13,15 +13,16 @@ footer {
 	background-color: var(--c-gray-dark);
 	z-index: 5;
 
-	& .copyright {
+	.copyright {
 		width: 50%;
 	}
 
-	& .payment-list {
+	.payment-list {
 		margin-left: auto;
 		display: flex;
 		justify-content: flex-end;
-		& .payment-list-item {
+
+		.payment-list-item {
 			margin-right: 10px;
 		}
 	}
