@@ -1,0 +1,42 @@
+.product-groups {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0;
+
+	.product-group-item {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		&:hover {
+			.image {
+				transform: scale(1.05);
+			}
+		}
+		.image {
+			width: 100.5%;
+			height: 100.5%;
+			transition: all 0.3s ease-in-out;
+		}
+		.title {
+			position: absolute;
+			left: 40px;
+			bottom: 40px;
+			color: var(--c-white);
+		}
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	.product-groups {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.product-groups .product-group-item {
+		.title {
+			position: absolute;
+			left: 20px !important;
+			bottom: 10px !important;
+			font-size: 1.25em;
+		}
+	}
+}
