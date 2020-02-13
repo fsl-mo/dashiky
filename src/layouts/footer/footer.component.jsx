@@ -1,9 +1,9 @@
 import React from 'react';
 
-import visaImageUrl from '../../assets/images/visa.svg';
-import masterImageUrl from '../../assets/images/master.svg';
-import amexImageUrl from '../../assets/images/amex.svg';
-import paypalImageUrl from '../../assets/images/paypal.svg';
+import visaImageUrl from '../../assets/images/store/visa.svg';
+import masterImageUrl from '../../assets/images/store/master.svg';
+import amexImageUrl from '../../assets/images/store/amex.svg';
+import paypalImageUrl from '../../assets/images/store/paypal.svg';
 
 import './footer.styles.scss';
 
