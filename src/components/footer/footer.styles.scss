@@ -1,0 +1,28 @@
+footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	padding: 32px;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	background-color: var(--c-gray-dark);
+	z-index: 5;
+
+	& .copyright {
+		width: 50%;
+	}
+
+	& .payment-list {
+		margin-left: auto;
+		display: flex;
+		justify-content: flex-end;
+		& .payment-list-item {
+			margin-right: 10px;
+		}
+	}
+}
