@@ -2,8 +2,6 @@ import React from 'react';
 
 import './collections.styles.scss';
 
-const Collections = () => (
-  <main className="collections-page">collections Page</main>
-);
+const Collections = () => <div className="collections-page">collections Page</div>;
 
 export default Collections;
