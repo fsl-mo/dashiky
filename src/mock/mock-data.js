@@ -1,52 +1,43 @@
-import butterBoxesImage from '../assets/images/product-groups/pg-butterBox-1024.png';
-import jarsImage from '../assets/images/product-groups/pg-jars-1024.png';
-import cupsImage from '../assets/images/product-groups/pg-cups-1024.png';
-import vasesImage from '../assets/images/product-groups/pg-vases-1024.png';
-import pitchersImage from '../assets/images/product-groups/pg-pitchers-1024.png';
-import bowlsImage from '../assets/images/product-groups/pg-bowls-1024.png';
-import woodImage from '../assets/images/product-groups/pg-wood-1024.png';
-import flowerpotsImage from '../assets/images/product-groups/pg-flowerpots-1024.png';
-
 const ProductGroupsData = [
   {
     id: 'butter-boxes',
     title: 'Butter Boxes',
-    imgUrl: butterBoxesImage,
+    imgUrl: 'https://i.ibb.co/48GrxyB/pg-butter-Box-1024.png',
   },
   {
     id: 'jars',
     title: 'Jars',
-    imgUrl: jarsImage,
+    imgUrl: 'https://i.ibb.co/PZTb6YZ/pg-jars-1024.png',
   },
   {
     id: 'bowls',
     title: 'Bowls',
-    imgUrl: bowlsImage,
+    imgUrl: 'https://i.ibb.co/6m5MbZD/pg-bowls-1024.png',
   },
   {
     id: 'vases',
     title: 'Vases',
-    imgUrl: vasesImage,
+    imgUrl: 'https://i.ibb.co/cYD89F7/pg-veses-1024.png',
   },
   {
     id: 'cups',
     title: 'Cups',
-    imgUrl: cupsImage,
+    imgUrl: 'https://i.ibb.co/R6RZ6kS/pg-cups-1024.png',
   },
   {
     id: 'wood',
     title: 'Wood',
-    imgUrl: woodImage,
+    imgUrl: 'https://i.ibb.co/TRq9MXD/pg-wood-1024.png',
   },
   {
     id: 'pitchers',
     title: 'Pitchers',
-    imgUrl: pitchersImage,
+    imgUrl: 'https://i.ibb.co/G7Bw1Jz/pg-pitchers-1024.png',
   },
   {
     id: 'flowerpots',
     title: 'Flowerpots',
-    imgUrl: flowerpotsImage,
+    imgUrl: 'https://i.ibb.co/Dgtc27B/pg-flowerpots-1024.png',
   },
 ];
 
