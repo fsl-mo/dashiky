@@ -11,7 +11,7 @@ const ProductGroups = ({ data }) => {
         <li key={item.id} className="product-group-item">
           <Link to={`/collections/${item.id}`}>
             <img src={`${item.imgUrl}`} alt={item.title} className="image" />
-            <h2 className="title">{item.title}</h2>
+            <h3 className="title">{item.title}</h3>
           </Link>
         </li>
       ))}
