@@ -1,26 +1,14 @@
 :root {
-	--c-primary-light: #89b8c4;
-	--c-primary-main: #6ca7b6;
-	--c-primary-dark: #4b747f;
+	--c-primary: #244f79;
 
-	--c-secondary-light: #f8d786;
-	--c-secondary-main: #f7ce68;
-
-	--c-secondary-dark: #ac9048;
-
-	--c-tertiary-light: #fbbb97;
-	--c-tertiary-main: #fbab7e;
-	--c-tertiary-dark: #af7758;
-
-	--c-primary-text: #585858;
-	--c-secondary-text: #949494;
-
-	--c-gray-light: #f9f9f9;
-	--c-gray-main: #f4f4f4;
-	--c-gray-dark: #e7e5e5;
+	--c-dark: #333333;
+	--c-gray: #bbbbbb;
+	--c-silver: #cccccc;
+	--c-gainsboro: #dddddd;
+	--c-bright-gray: #eeeeee;
 
 	--c-white: #ffffff;
-	--c-black: #232128;
+	--c-black: #000000;
 
 	--width-xs: 600px;
 	--width-sm: 960px;
@@ -47,7 +35,7 @@ html {
 
 body {
 	background-color: var(--c-white);
-	color: var(--c-primary-text);
+	color: var(--c-dark);
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -75,7 +63,7 @@ ul {
 }
 
 a {
-	color: var(--c-primary-main);
+	color: var(--c-primary);
 	text-decoration: none;
 	cursor: pointer;
 	&:active,

@@ -6,6 +6,7 @@ header {
 	width: 100%;
 	display: flex;
 	background-color: var(--c-white);
+
 	z-index: 5;
 
 	.logo-wrapper {
@@ -31,13 +32,6 @@ header {
 			align-items: center;
 			justify-content: center;
 			font-size: 1.25rem;
-
-			&:first-child {
-				background-color: var(--c-gray-main);
-			}
-			&:last-child {
-				background-color: var(--c-gray-dark);
-			}
 		}
 	}
 }
