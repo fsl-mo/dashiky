@@ -1,12 +1,10 @@
 .home-page {
 	width: 100%;
+}
+
+section.section-product-groups {
 	min-height: calc(100vh - 160px);
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	background-color: var(--c-tertiary-main);
-	background-image: linear-gradient(
-		90deg,
-		var(--c-primary-main) 0%,
-		var(--c-secondary-main) 100%
-	);
 }

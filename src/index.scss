@@ -1,16 +1,15 @@
 :root {
-	--c-primary-light: #89b8c4;
-	--c-primary-main: #6ca7b6;
-	--c-primary-dark: #4b747f;
+	--c-primary-light: #f7d747;
+	--c-primary-main: #f6cd19;
+	--c-primary-dark: #ac8f11;
 
-	--c-secondary-light: #f8d786;
-	--c-secondary-main: #f7ce68;
+	--c-secondary-light: #bbdbe8;
+	--c-secondary-main: #9dc6d8;
+	--c-secondary-dark: #77939e;
 
-	--c-secondary-dark: #ac9048;
-
-	--c-tertiary-light: #fbbb97;
-	--c-tertiary-main: #fbab7e;
-	--c-tertiary-dark: #af7758;
+	--c-tertiary-light: #e09b81;
+	--c-tertiary-main: #d98362;
+	--c-tertiary-dark: #975b44;
 
 	--c-primary-text: #585858;
 	--c-secondary-text: #949494;
@@ -19,8 +18,11 @@
 	--c-gray-main: #f4f4f4;
 	--c-gray-dark: #e7e5e5;
 
+	--c-dark: #232128;
+	--c-light: #fbfcfc;
+
 	--c-white: #ffffff;
-	--c-black: #232128;
+	--c-black: #000000;
 
 	--width-xs: 600px;
 	--width-sm: 960px;
@@ -75,7 +77,7 @@ ul {
 }
 
 a {
-	color: var(--c-primary-main);
+	color: var(--c-secondary-main);
 	text-decoration: none;
 	cursor: pointer;
 	&:active,
