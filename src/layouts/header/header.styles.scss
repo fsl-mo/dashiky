@@ -5,33 +5,39 @@ header {
 	height: 80px;
 	width: 100%;
 	display: flex;
+	color: var(--c-dark);
 	background-color: var(--c-white);
-
 	z-index: 5;
 
-	.logo-wrapper {
-		width: 50%;
-		height: 100%;
+	.app-logo {
 		display: flex;
 		align-items: center;
-		padding-left: 16px;
-
-		a {
-			height: 32px;
+		justify-content: center;
+		margin-left: 32px;
+		height: 100%;
+		width: 50px;
+		img {
+			height: 46px;
 		}
 	}
 
 	.nav-menu {
 		height: 100%;
-		width: 50%;
+		flex: 1;
 		display: flex;
+		justify-content: flex-end;
+		padding-left: 32px;
+		padding-right: 32px;
 
 		.nav-item {
-			flex: 1;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 1.25rem;
+			font-size: 1.15rem;
+
+			a {
+				color: inherit;
+			}
 		}
 	}
 }

@@ -9,21 +9,50 @@ footer {
 	padding: 32px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	font-size: 14px;
 	background-color: var(--c-bright-gray);
 	z-index: 5;
 
 	.copyright {
-		width: 50%;
+		font-size: 14px;
+		span {
+			font-size: 16px;
+		}
+	}
+
+	.app-logo {
+		height: 45px;
 	}
 
 	.payment-list {
-		margin-left: auto;
 		display: flex;
-		justify-content: flex-end;
-
 		.payment-list-item {
+			width: 34px;
+
+			img {
+				width: 100%;
+			}
+		}
+		.payment-list-item:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+}
+
+@media only screen and (max-width: '600px') {
+	footer {
+		padding-left: 16px;
+		padding-right: 16px;
+		.app-logo {
+			display: none;
+		}
+
+		.payment-list .payment-list-item {
 			margin-right: 10px;
+			img {
+				width: 100%;
+			}
 		}
 	}
 }

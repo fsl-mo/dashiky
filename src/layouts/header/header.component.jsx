@@ -7,17 +7,10 @@ import './header.styles.scss';
 
 const Header = () => (
   <header>
-    <div className="logo-wrapper">
-      <Link to="/">
-        <Logo />
-      </Link>
-    </div>
+    <Link to="/" className="app-logo">
+      <Logo variant="dark" />
+    </Link>
     <ul className="nav-menu">
-      <li className="nav-item">
-        <Link to="#main-menu" className="nav-link">
-          Menu
-        </Link>
-      </li>
       <li className="nav-item">
         <Link to="#cart-menu" className="nav-link">
           Cart

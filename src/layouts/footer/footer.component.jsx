@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Logo from '../../components/logo/logo.component';
 import visaImageUrl from '../../assets/images/store/visa.svg';
 import masterImageUrl from '../../assets/images/store/master.svg';
 import amexImageUrl from '../../assets/images/store/amex.svg';
@@ -9,7 +10,12 @@ import './footer.styles.scss';
 
 const Footer = () => (
   <footer role="contentinfo">
-    <div className="copyright">© Dashiky</div>
+    <div className="copyright">
+      <span>©</span> Flomingo
+    </div>
+    <div className="app-logo">
+      <Logo />
+    </div>
     <ul className="payment-list">
       <li className="payment-list-item">
         <img src={visaImageUrl} alt="Visa" title="Visa" />
