@@ -1,4 +1,11 @@
-.product-groups {
+section.section-shop-categories {
+	min-height: calc(100vh - 160px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.categories {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(240px, 300px));
 	grid-template-areas:
@@ -13,18 +20,17 @@
 	justify-content: center;
 	overflow-x: hidden;
 
-	.product-group-item {
+	.category-item {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
 		&:hover {
-			cursor: pointer;
-			.product-group-item-bg {
+			.category-item-bg {
 				transform: scale(1.1);
 			}
 		}
-		.product-group-item-bg {
+		.category-item-bg {
 			width: 100%;
 			height: 100%;
 			background-position: center;
@@ -33,7 +39,7 @@
 			transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 		}
 
-		.product-group-item-cta {
+		.category-item-cta {
 			position: absolute;
 			width: 100px;
 			height: 40px;
@@ -61,39 +67,35 @@
 			}
 		}
 	}
-	.product-group-item-1,
-	.product-group-item-2 {
-		.product-group-item-bg {
+	.category-item-1,
+	.category-item-2 {
+		.category-item-bg {
 			background-position: top center;
 		}
 	}
-	.product-group-item-1 {
+	.category-item-1 {
 		grid-area: women;
 	}
-	.product-group-item-2 {
+	.category-item-2 {
 		grid-area: man;
 	}
-	.product-group-item-3 {
+	.category-item-3 {
 		grid-area: hats;
 	}
-	.product-group-item-4 {
+	.category-item-4 {
 		grid-area: shoes;
 	}
-	.product-group-item-5 {
+	.category-item-5 {
 		grid-area: jackets;
 	}
 }
 
 @media only screen and (max-width: 600px) {
-	.product-groups {
+	.categories {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(100px, 200px));
-		// grid-template-areas:
-		// 	'women hats    man'
-		// 	'women jackets  man'
-		// 	'women shoes man';
 		gap: 0.2em;
-		.product-group-item .product-group-item-cta {
+		.category-item .category-item-cta {
 			width: 90px;
 			height: 30px;
 			.title {

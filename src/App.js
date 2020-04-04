@@ -5,7 +5,7 @@ import Header from './layouts/header/header.component';
 import Footer from './layouts/footer/footer.component';
 
 import Home from './pages/home/home.component';
-import Collections from './pages/collections/collections.component';
+import Shop from './pages/shop/shop.component';
 import About from './pages/about/about.component';
 
 const App = () => (
@@ -13,9 +13,9 @@ const App = () => (
     <Header />
     <main role="main">
       <Switch>
-        <Route path="/collections" component={Collections} />
-        <Route exact path="/about" component={About} />
         <Route exact path="/" component={Home} />
+        <Route path="/shop" component={Shop} />
+        <Route exact path="/about" component={About} />
         {/* TODO: create 404 page and redirect broken links. */}
         <Redirect to="/" />
       </Switch>
