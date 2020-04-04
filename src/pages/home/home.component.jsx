@@ -1,14 +1,12 @@
 import React from 'react';
 
-import ProductGroups from '../../components/product-groups/product-groups.component';
+import ShopCategories from '../../components/shop-categories/shop-categories.component';
 
 import './home.styles.scss';
 
 const Home = () => (
   <div className="home-page">
-    <section className="section-product-groups">
-      <ProductGroups />
-    </section>
+    <ShopCategories />
   </div>
 );
 
