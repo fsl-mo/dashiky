@@ -1,0 +1,34 @@
+.collection-item {
+	height: 260px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid var(--c-dark);
+	transition: all var(--transition-speed) ease-in-out;
+
+	&:hover {
+		.image {
+			filter: grayscale(100%);
+		}
+		.content {
+			background-color: #fff;
+		}
+	}
+
+	.image {
+		width: 100%;
+		height: 90%;
+		background-size: cover !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		filter: grayscale(0%);
+	}
+	.content {
+		height: 10%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		background-color: var(--c-primary);
+		padding: 4px;
+	}
+}

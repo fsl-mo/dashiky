@@ -1,0 +1,28 @@
+.collection-preview {
+	margin-bottom: 32px;
+	.title {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+		font-weight: 400;
+		color: var(--c-primary-text);
+		width: fit-content;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 50%;
+			border-bottom: 2px solid var(--c-primary);
+			z-index: -1;
+		}
+	}
+	.items {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 260px));
+		gap: 10px;
+		justify-content: center;
+	}
+}
