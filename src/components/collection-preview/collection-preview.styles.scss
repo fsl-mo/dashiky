@@ -1,27 +1,37 @@
 .collection-preview {
-	margin-bottom: 32px;
+	margin-bottom: 50px;
+
 	.title {
 		position: relative;
+		margin-bottom: 40px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 0;
+		font-size: 2rem;
+		font-family: var(--font-family-special);
 		font-weight: 400;
 		color: var(--c-primary-text);
 		width: fit-content;
+		transform: rotate(-5deg);
 		&::after {
 			content: '';
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			width: 50%;
-			border-bottom: 2px solid var(--c-primary);
+			width: 100%;
+			border-bottom: 3px solid var(--c-primary);
 			z-index: -1;
 		}
 	}
+
+	.viewAll {
+		margin: 40px auto;
+		width: fit-content;
+	}
+
 	.items {
 		width: 100%;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 260px));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
 		gap: 10px;
 		justify-content: center;
 	}

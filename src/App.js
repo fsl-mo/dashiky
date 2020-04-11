@@ -14,7 +14,8 @@ const App = () => (
     <main role="main">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/shop" component={Shop} />
+        <Route exact path="/shop" component={Shop} />
+        <Route exact path="/shop/:collectionId" component={Shop} />
         <Route exact path="/about" component={About} />
         {/* TODO: create 404 page and redirect broken links. */}
         <Redirect to="/" />

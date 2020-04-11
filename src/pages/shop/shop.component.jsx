@@ -14,21 +14,34 @@ class Shop extends Component {
     };
   }
 
-  getPreviewItems = items => items.filter((item, idx) => idx < 4);
+  getPreviewItems = items => items.filter((item, idx) => idx < 6);
 
-  render() {
+  renderContent = () => {
     const { data } = this.state;
+    const { collectionId } = this.props.match.params;
+
     return (
       <div className="shop-page container">
-        {data.map(item => (
-          <CollectionPreview
-            key={item.id}
-            title={item.title}
-            items={this.getPreviewItems(item.items)}
-          />
-        ))}
+        {collectionId
+          ? data
+              .filter(item => item.routeName === collectionId)
+              .map(({ id, items, ...rest }) => (
+                <CollectionPreview key={id} items={items} {...rest} />
+              ))
+          : data.map(({ id, items, ...rest }) => (
+              <CollectionPreview
+                key={id}
+                items={this.getPreviewItems(items)}
+                showViewAll
+                {...rest}
+              />
+            ))}
       </div>
     );
+  };
+
+  render() {
+    return this.renderContent();
   }
 }
 
