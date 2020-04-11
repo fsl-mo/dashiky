@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ShopCategories from '../../components/shop-categories/shop-categories.component';
+import ShopPreview from '../../components/shop-preview/shop-preview.component';
 
 import './home.styles.scss';
 
 const Home = () => (
   <div className="home-page">
-    <ShopCategories />
+    <ShopPreview />
   </div>
 );
 

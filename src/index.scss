@@ -24,6 +24,9 @@
 
 	--transition-speed: 750ms;
 	--transition-fn: cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+	--font-family-main: 'Roboto', sans-serif;
+	--font-family-special: 'Caveat Brush', cursive;
 }
 
 *,
@@ -46,9 +49,9 @@ html {
 body {
 	background-color: var(--c-white);
 	color: var(--c-dark);
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--font-family-main);
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1.25;
 	margin: 0;
 	overflow-x: hidden;
