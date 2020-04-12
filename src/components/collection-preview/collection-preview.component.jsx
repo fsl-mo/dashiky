@@ -13,7 +13,7 @@ const CollectionPreview = ({
   showViewAll = false,
 }) => (
   <div className="collection-preview">
-    <h2 className="title">{title.toUpperCase()}</h2>
+    <h2 className="title">{title}</h2>
     <div className="items">
       {items.map(item => (
         <CollectionItem

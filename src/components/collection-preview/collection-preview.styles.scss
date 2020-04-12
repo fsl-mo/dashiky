@@ -3,10 +3,9 @@
 
 	.title {
 		position: relative;
-		margin-bottom: 40px;
-		margin-left: auto;
-		margin-right: auto;
-		font-size: 2rem;
+		margin: 2rem auto;
+		padding-bottom: 1rem;
+		font-size: 2.5rem;
 		font-family: var(--font-family-special);
 		font-weight: 400;
 		color: var(--c-primary-text);
@@ -16,9 +15,10 @@
 			content: '';
 			position: absolute;
 			bottom: 0;
-			left: 0;
-			width: 100%;
-			border-bottom: 3px solid var(--c-primary);
+			left: 50%;
+			width: 50%;
+			transform: translateX(-50%);
+			border-bottom: 4px solid var(--c-primary);
 			z-index: -1;
 		}
 	}
@@ -31,8 +31,8 @@
 	.items {
 		width: 100%;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
-		gap: 10px;
+		grid-template-columns: repeat(auto-fit, 300px);
+		gap: 2rem;
 		justify-content: center;
 	}
 }
