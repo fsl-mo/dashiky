@@ -31,6 +31,8 @@
 
 	--font-family-main: 'Roboto', sans-serif;
 	--font-family-special: 'Caveat Brush', cursive;
+
+	--box-shadow-color: rgba(165, 165, 165, 0.2);
 }
 
 /* layout */
@@ -52,13 +54,14 @@ html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-size: 14px;
 }
 
 body {
-	color: var(--c-primary-text);
-	font-size: 16px;
+	color: var(--c-secondary-text);
+	font-size: 1rem;
 	font-weight: 300;
-	line-height: 1;
+	line-height: 1.2;
 	font-family: var(--font-family-main);
 	background-color: var(--c-white);
 	overflow-x: hidden;
@@ -70,9 +73,14 @@ body {
 	}
 }
 
+.app-wrapper {
+	position: relative;
+	min-height: 100vh;
+}
+
 main {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 ol,
@@ -82,31 +90,23 @@ ul {
 	padding: 0;
 }
 
-a {
-	color: var(--c-primary);
-	text-decoration: none;
-	cursor: pointer;
-	&:active,
-	&:hover {
-		outline: 0;
-	}
-}
-
-.app-wrapper {
-	position: relative;
-	min-height: 100vh;
-}
-
 ul {
 	list-style: none;
 }
 
 a {
-	font-style: none;
+	color: var(--c-primary-text);
 	text-decoration: none;
-	color: inherit;
+	font-style: none;
+
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+
 	&:hover {
 		cursor: pointer;
+		color: var(--c-secondary-text);
 	}
 }
 
