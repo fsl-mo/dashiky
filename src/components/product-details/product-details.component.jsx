@@ -38,9 +38,16 @@ const ProductDetails = () => {
       <div className="content">
         <h3 className="name">{name}</h3>
         <h2 className="price">${price}</h2>
+        {stock < 10 && (
+          <div className="stock">
+            <span role="img" with aria-label="number of stock left">
+              🔥
+            </span>
+            Only {stock} pcs left
+          </div>
+        )}
 
         <div className="details">
-          <h3>Details</h3>
           <div className="detail">
             <span>Type: </span> {type.trim()}
           </div>
@@ -51,6 +58,12 @@ const ProductDetails = () => {
             <span>Gender: </span>
             {gender.trim()}
           </div>
+          <button
+            type="button"
+            className=" btn-addToBag btn btn--dark btn--large"
+          >
+            Add to bag
+          </button>
           <hr className="divider" />
           <p className="description">{description}</p>
         </div>

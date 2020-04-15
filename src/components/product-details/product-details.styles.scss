@@ -4,6 +4,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 3rem;
+
 	overflow: hidden;
 	.image-wrap {
 		flex: 1;
@@ -19,23 +21,38 @@
 	}
 	.content {
 		flex: 1;
-		max-width: 400px;
+		max-width: 300px;
 		min-width: 300px;
-		padding: 3rem 1rem;
+		padding: 1rem;
 		line-height: 1.5;
-
+		overflow: hidden;
 		.name {
 			font-weight: 200;
 			margin-bottom: 0;
+			color: var(--c-primary-text);
 		}
 		.price {
 			margin-top: 0.5rem;
 			font-weight: 200;
+			color: var(--c-primary-text);
+		}
+		.stock {
+			font-weight: 500;
+			color: var(--c-danger);
+			span {
+				margin-right: 0.5rem;
+			}
+		}
+
+		.btn-addToBag {
+			width: 100%;
+			margin-top: 2rem;
 		}
 		.divider {
 			margin: 2rem 0;
 		}
 		.details {
+			margin-top: 1rem;
 			.detail {
 				font-size: 0.9rem;
 				font-weight: 200;
