@@ -115,6 +115,12 @@ h1 {
 	margin-bottom: 0.5em;
 }
 
+hr {
+	border: 0;
+	height: 1px;
+	background: var(--c-gainsboro);
+}
+
 .btn {
 	padding: 0.375em 0.75em;
 	font-size: 1em;

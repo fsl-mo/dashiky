@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
+import ProductDetails from '../../components/product-details/product-details.component';
 
 import './shop.styles.scss';
 
@@ -11,9 +12,11 @@ const Shop = () => {
   return (
     <div className="shop container">
       <Switch>
-        <Route exact path={`${path}/:collectionId/:productId`}>
-          {/* //TODO: Render productDetails component */}
-        </Route>
+        <Route
+          exact
+          path={`${path}/:collectionId/:productId`}
+          render={props => <ProductDetails product={null} {...props} />}
+        />
 
         <Route
           exact
