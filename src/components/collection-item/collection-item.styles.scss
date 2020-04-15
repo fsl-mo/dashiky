@@ -1,13 +1,11 @@
 .collection-item {
-	min-width: 300px;
-	min-height: 350px;
+	width: 250px;
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 
 	.image {
 		width: 250px;
 		height: 250px;
-		margin: 0.5rem auto;
 		background-size: 100% !important;
 		background-position: center !important;
 		background-repeat: no-repeat !important;
@@ -15,10 +13,8 @@
 	}
 	.content {
 		display: flex;
-		height: 80px;
 		width: 100%;
 		margin-top: 1rem;
-		padding: 0.5rem;
 		justify-content: space-between;
 		overflow: hidden;
 		.name {
@@ -26,9 +22,8 @@
 			margin-right: 1rem;
 		}
 		.price {
-			font-size: 1.25rem;
 			color: var(--c-dark);
-			font-family: var(--font-family-special);
+			// font-family: var(--font-family-special);
 		}
 	}
 }

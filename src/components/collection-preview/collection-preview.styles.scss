@@ -1,5 +1,7 @@
 .collection-preview {
-	margin-bottom: 50px;
+	.preview {
+		margin-bottom: 60px;
+	}
 
 	.title {
 		position: relative;
@@ -24,14 +26,15 @@
 	}
 
 	.viewAll {
-		margin: 40px auto;
+		margin: auto;
+		margin-top: 2rem;
 		width: fit-content;
 	}
 
 	.items {
 		width: 100%;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, 300px);
+		grid-template-columns: repeat(auto-fit, 250px);
 		gap: 2rem;
 		justify-content: center;
 	}

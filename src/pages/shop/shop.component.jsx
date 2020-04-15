@@ -1,48 +1,30 @@
-import React, { Component } from 'react';
-
-import { SHOP_DATA } from '../../data/data';
+import React from 'react';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
 import './shop.styles.scss';
 
-class Shop extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: SHOP_DATA,
-    };
-  }
+const Shop = () => {
+  const { path } = useRouteMatch();
 
-  getPreviewItems = items => items.filter((item, idx) => idx < 6);
+  return (
+    <div className="shop container">
+      <Switch>
+        <Route exact path={`${path}/:collectionId/:productId`}>
+          {/* //TODO: Render productDetails component */}
+        </Route>
 
-  renderContent = () => {
-    const { data } = this.state;
-    const { collectionId } = this.props.match.params;
+        <Route
+          exact
+          path={`${path}/:collectionId`}
+          component={CollectionPreview}
+        />
 
-    return (
-      <div className="shop-page container">
-        {collectionId
-          ? data
-              .filter(item => item.routeName === collectionId)
-              .map(({ id, items, ...rest }) => (
-                <CollectionPreview key={id} items={items} {...rest} />
-              ))
-          : data.map(({ id, items, ...rest }) => (
-              <CollectionPreview
-                key={id}
-                items={this.getPreviewItems(items)}
-                showViewAll
-                {...rest}
-              />
-            ))}
-      </div>
-    );
-  };
-
-  render() {
-    return this.renderContent();
-  }
-}
+        <Route exact path={path} component={CollectionPreview} />
+      </Switch>
+    </div>
+  );
+};
 
 export default Shop;
