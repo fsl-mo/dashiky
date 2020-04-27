@@ -1,0 +1,32 @@
+{
+	"name": "flomingo",
+	"version": "1.0.0",
+	"description": "simple online store app",
+	"author": "Faisal M.",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"keywords": [
+		"store",
+		"react store",
+		"react e-commerce app",
+		"react online store"
+	],
+	"devDependencies": {
+		"babel-eslint": "10.0.3",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-config-wesbos": "^0.0.19",
+		"eslint-plugin-html": "^6.0.0",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.18.3",
+		"eslint-plugin-react-hooks": "^2.3.0",
+		"prettier": "^1.19.1"
+	}
+}
