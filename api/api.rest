@@ -1,0 +1,44 @@
+### Testing API routes with REST CLIENT EXTENSION ###
+
+# Get entire database
+GET http://localhost:5000/api/db
+
+###
+
+# Get all collections
+GET http://localhost:5000/api/collections
+
+###
+
+# Get one collection
+GET http://localhost:5000/api/collections/2
+
+###
+
+# Get all products of a collection
+GET http://localhost:5000/api/collections/3/products
+
+###
+
+# Get a collection and related products
+GET http://localhost:5000/api/collections/2?_embed=products
+
+###
+
+# Get all products
+GET http://localhost:5000/api/products
+
+###
+
+# Get one products
+GET http://localhost:5000/api/products/2
+
+###
+
+# Get all products of a specific collection
+GET http://localhost:5000/api/products?collectionId=2
+
+###
+
+# Get all products of a specific collection and sort by price asc
+GET http://localhost:5000/api/products?collectionId=2&_sort=price&_order=asc

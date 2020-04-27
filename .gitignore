@@ -114,5 +114,5 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
-# Rest client extension files
-api.rest
+# Environment viriables
+.env
