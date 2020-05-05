@@ -7,7 +7,7 @@ import Footer from './layouts/footer/footer.component';
 import Home from './pages/home/home.component';
 import Shop from './pages/shop/shop.component';
 import About from './pages/about/about.component';
-import ErrorPage from './pages/error-page/error-page.component';
+import Error from './pages/error/error.component';
 
 const App = () => (
   <div className="app-wrapper">
@@ -17,7 +17,7 @@ const App = () => (
         <Route path="/shop" component={Shop} />
         <Route exact path="/about" component={About} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/error-page" component={ErrorPage} />
+        <Route exact path="/error-page" component={Error} />
         <Redirect
           to={{
             pathname: '/error-page',

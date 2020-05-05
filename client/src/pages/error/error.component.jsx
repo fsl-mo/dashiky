@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-import './error-page.styles.scss';
+import './error.styles.scss';
 
-const ErrorPage = () => {
+const Error = () => {
   const { state } = useLocation();
   const error = state && state.error ? state.error : null;
   const referrer = state && state.referrer ? state.referrer : '/';
@@ -30,4 +30,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Error;
