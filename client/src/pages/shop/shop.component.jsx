@@ -10,7 +10,7 @@ const Shop = () => {
   const { path } = useRouteMatch();
 
   return (
-    <div className="shop container">
+    <div className="shop-page container">
       <Switch>
         <Route
           exact

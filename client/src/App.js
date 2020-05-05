@@ -4,20 +4,22 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from './layouts/header/header.component';
 import Footer from './layouts/footer/footer.component';
 
-import Home from './pages/home/home.component';
-import Shop from './pages/shop/shop.component';
-import About from './pages/about/about.component';
-import Error from './pages/error/error.component';
+import HomePage from './pages/home/home.component';
+import ShopPage from './pages/shop/shop.component';
+import AboutPage from './pages/about/about.component';
+import ErrorPage from './pages/error/error.component';
+import SignInAndSignUpPage from './pages/signIn-and-signUp/signIn-and-SignUp.component';
 
 const App = () => (
   <div className="app-wrapper">
     <Header />
     <main role="main">
       <Switch>
-        <Route path="/shop" component={Shop} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/error-page" component={Error} />
+        <Route path="/shop" component={ShopPage} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/login" component={SignInAndSignUpPage} />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/error-page" component={ErrorPage} />
         <Redirect
           to={{
             pathname: '/error-page',

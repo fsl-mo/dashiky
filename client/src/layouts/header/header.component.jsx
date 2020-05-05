@@ -21,6 +21,11 @@ const Header = () => {
         <Link to="/about" className={`nav-link ${setActiveClass('/about')}`}>
           About
         </Link>
+
+        <div className="divider vertical" />
+        <Link to="/login" className={`nav-link ${setActiveClass('/login')}`}>
+          SignIn
+        </Link>
       </nav>
     </header>
   );
