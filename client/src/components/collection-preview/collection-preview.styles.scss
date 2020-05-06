@@ -4,25 +4,8 @@
 	}
 
 	.title {
-		position: relative;
-		margin: 2rem auto;
-		padding-bottom: 1rem;
-		font-size: 2.5rem;
-		font-family: var(--font-family-special);
-		font-weight: 400;
-		color: var(--c-primary-text);
+		margin: 0 auto 2rem;
 		width: fit-content;
-		transform: rotate(-5deg);
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: 50%;
-			transform: translateX(-50%);
-			border-bottom: 4px solid var(--c-primary);
-			z-index: -1;
-		}
 	}
 
 	.viewAll {

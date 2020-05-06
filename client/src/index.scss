@@ -3,11 +3,11 @@
 /* variables */
 
 :root {
-	--c-primary: #ffc400;
-	--c-secondary: #5c6bc0;
+	--c-primary: #5c6bc0;
+	--c-secondary: #ffc400;
 
 	--c-primary-text: #383838;
-	--c-secondary-text: #888787;
+	--c-secondary-text: #575757;
 
 	--c-info: #42a5f5;
 	--c-success: #66bb6a;
@@ -120,10 +120,35 @@ h1 {
 	margin-bottom: 0.5em;
 }
 
+h2 {
+	position: relative;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	// font-size: 2rem;
+	// font-weight: 500;
+	color: var(--c-primary-text);
+	&::after {
+		content: ' ';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 30px;
+		height: 3px;
+		background-color: var(--c-primary);
+	}
+}
+
 hr {
 	border: 0;
 	height: 1px;
 	background: var(--c-gainsboro);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px var(--c-white) inset !important;
 }
 
 .btn {
