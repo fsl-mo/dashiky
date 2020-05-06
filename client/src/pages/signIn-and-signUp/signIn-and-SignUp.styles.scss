@@ -1,0 +1,52 @@
+.signIn-and-SignUp-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 100px);
+	background-color: var(--c-light);
+	.card {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 'left right';
+		gap: 0;
+		width: 100%;
+		min-height: 600px;
+		max-width: 1024px;
+		box-shadow: 0px 3px 15px var(--box-shadow-color);
+
+		.card-media {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(#ffc4009a, #5c6bc0ea),
+				url(../../assets/images/signin-bg.jpg) no-repeat;
+			background-size: cover;
+			background-position: center center;
+		}
+		.card-content {
+			padding: 2rem 2rem 4rem;
+			background-color: var(--c-white);
+			position: relative;
+			.heading {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 50px;
+				h2 {
+					color: var(--c-primary-text);
+					margin: 0;
+				}
+				a {
+					margin-left: 0.5rem;
+					color: var(--c-info);
+				}
+			}
+		}
+		@media only screen and (max-width: '720px') {
+			grid-template-columns: 1fr;
+			.card-media {
+				display: none;
+			}
+		}
+	}
+}
