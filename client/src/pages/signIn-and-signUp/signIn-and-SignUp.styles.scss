@@ -3,7 +3,8 @@
 	align-items: center;
 	justify-content: center;
 	min-height: calc(100vh - 100px);
-	background-color: var(--c-light);
+	background-color: var(--c-white);
+
 	.card {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -25,10 +26,11 @@
 		}
 		.card-content {
 			padding: 2rem 2rem 4rem;
-			background-color: var(--c-white);
 			position: relative;
 			display: flex;
 			flex-direction: column;
+			margin: auto;
+
 			.card-action {
 				height: 50px;
 				margin-top: 2rem;

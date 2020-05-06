@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import Logo from '../../components/logo/logo.component';
+import { ReactComponent as LoginIcon } from '../../assets/images/login-icon.svg';
 
 import './header.styles.scss';
 
@@ -23,8 +24,9 @@ const Header = () => {
         </Link>
 
         <div className="divider vertical" />
-        <Link to="/login" className={`nav-link ${setActiveClass('/login')}`}>
-          SignIn
+        <Link to="/login" className="nav-link">
+          <LoginIcon className="icon" />
+          Sign in
         </Link>
       </nav>
     </header>

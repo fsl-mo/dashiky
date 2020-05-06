@@ -213,12 +213,28 @@ input:-webkit-autofill:active {
 	}
 }
 
+.divider {
+	&.vertical {
+		width: 1px;
+		height: 100%;
+		margin: 0 2rem;
+		background-color: var(--c-bright-gray);
+	}
+	&.horizontal {
+		width: 100%;
+		height: 1px;
+		margin: 2rem 0;
+		background-color: var(--c-bright-gray);
+	}
+}
+
 .container {
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
 }
+
 @media (min-width: 768px) {
 	.container {
 		max-width: 750px;

@@ -30,13 +30,11 @@ class SigninForm extends Component {
     return (
       <form onSubmit={this.onSubmit} className="signin-form">
         <div className="form-content">
-          <h2>Sign in</h2>
+          <h1>Sign in</h1>
           <p>Welcome Back, Please login to your account.</p>
         </div>
         <div className="form-control">
-          <label htmlFor="email">
-            <EmailIcon className="icon" />
-          </label>
+          <EmailIcon className="input-icon" />
           <input
             id="email"
             name="email"
@@ -48,9 +46,7 @@ class SigninForm extends Component {
           />
         </div>
         <div className="form-control">
-          <label htmlFor="password">
-            <PasswordIcon className="icon" />
-          </label>
+          <PasswordIcon className="input-icon" />
           <input
             id="password"
             name="password"
@@ -64,7 +60,7 @@ class SigninForm extends Component {
         </div>
         <input
           type="submit"
-          value="Sign in"
+          value="Login"
           className="btn-submit btn btn--primary"
         />
       </form>
