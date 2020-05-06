@@ -8,7 +8,7 @@ import HomePage from './pages/home/home.component';
 import ShopPage from './pages/shop/shop.component';
 import AboutPage from './pages/about/about.component';
 import ErrorPage from './pages/error/error.component';
-import SignInAndSignUpPage from './pages/signIn-and-signUp/signIn-and-SignUp.component';
+import SignInAndSignUpPage from './pages/signin-and-signup/signin-and-signup.component';
 
 const App = () => (
   <div className="app-wrapper">
