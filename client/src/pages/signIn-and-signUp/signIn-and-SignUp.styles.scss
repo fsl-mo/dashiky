@@ -27,15 +27,12 @@
 			padding: 2rem 2rem 4rem;
 			background-color: var(--c-white);
 			position: relative;
-			.heading {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
+			display: flex;
+			flex-direction: column;
+			.card-action {
 				height: 50px;
-				h2 {
-					color: var(--c-primary-text);
-					margin: 0;
-				}
+				margin-top: 2rem;
+
 				a {
 					margin-left: 0.5rem;
 					color: var(--c-info);
