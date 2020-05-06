@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 import './signin-and-signup.styles.scss';
 
-const SignInAndSignUp = () => {
+const SigninAndSignup = () => {
   const [activeTab, setActiveTap] = useState(0);
 
   return (
-    <div className="signIn-and-SignUp-page ">
+    <div className="signin-and-signup-page ">
       <div className="card ">
         <div
           className="card-media"
@@ -68,4 +68,4 @@ const SignInAndSignUp = () => {
   );
 };
 
-export default SignInAndSignUp;
+export default SigninAndSignup;
