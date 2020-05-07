@@ -3,8 +3,7 @@
 /* variables */
 
 :root {
-	--c-primary: #5c6bc0;
-	--c-secondary: #ffc400;
+	--c-primary: #f0b800;
 
 	--c-primary-text: #383838;
 	--c-secondary-text: #575757;
@@ -155,62 +154,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0 30px var(--c-white) inset !important;
-}
-
-.btn {
-	padding: 0.375em 0.75em;
-	font-size: 1em;
-	font-weight: 400;
-	color: var(--c-secondary-text);
-	background-color: var(--c-light);
-	border: 1px solid transparent;
-	border-radius: 2px;
-	line-height: 1.5;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	cursor: pointer;
-
-	&:hover {
-		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 6px 0 rgba(0, 0, 0, 0.12);
-	}
-	&:focus {
-		outline: none;
-	}
-
-	&.btn--primary {
-		background-color: var(--c-primary);
-		color: var(--c-white);
-	}
-	&.btn--secondary {
-		background-color: var(--c-secondary);
-		color: var(--c-white);
-	}
-	&.btn--dark {
-		color: var(--c-white);
-		background-color: var(--c-dark);
-	}
-
-	&.btn--lg {
-		padding: 0.5rem 1rem;
-		font-size: 1.25rem;
-	}
-	&.btn--sm {
-		padding: 0.25rem 0.5rem;
-		font-size: 0.875rem;
-	}
-
-	&.icon-btn {
-		padding: 0.375;
-		font-size: 1em;
-		line-height: 2em;
-		border-radius: 100%;
-		background-color: transparent;
-		&:hover {
-			cursor: pointer;
-			box-shadow: none;
-		}
-	}
 }
 
 .divider {

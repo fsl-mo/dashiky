@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useRouteMatch } from 'react-router-dom';
 
 import { SHOP_DATA } from '../../data/data';
 
 import CollectionItem from '../collection-item/collection-item-component';
+import Button from '../ui/button/button.component';
 
 import './collection-preview.styles.scss';
 
 const CollectionPreview = () => {
+  const { path } = useRouteMatch();
   const { collectionId } = useParams();
   const [data, setData] = useState();
 
@@ -47,11 +49,11 @@ const CollectionPreview = () => {
             {renderItems(items, `/shop/${routeName}`)}
           </div>
           {data.length > 1 && (
-            <div className="viewAll">
-              <Link to={`/shop/${routeName}`} className="btn btn--dark">
-                View All
-              </Link>
-            </div>
+            <Link to={`${path}/${routeName}`} className="viewAll">
+              <Button variant="dark" size="small">
+                View all
+              </Button>
+            </Link>
           )}
         </div>
       ))}

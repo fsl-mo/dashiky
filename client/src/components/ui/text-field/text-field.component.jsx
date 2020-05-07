@@ -57,7 +57,7 @@ TextField.propTypes = {
   error: PropTypes.bool,
   className: PropTypes.string,
   autoComplete: PropTypes.oneOf(['off', 'new-password']),
-  size: PropTypes.oneOf(['medium', 'small']),
+  size: PropTypes.oneOf(['large', 'small']),
   iconElement: PropTypes.elementType,
 };
 export default TextField;

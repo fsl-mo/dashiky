@@ -5,6 +5,7 @@ import { ReactComponent as PasswordIcon } from '../../assets/images/password-ico
 import TextField from '../ui/text-field/text-field.component';
 
 import './signin-form.styles.scss';
+import Button from '../ui/button/button.component';
 
 class SigninForm extends Component {
   constructor(props) {
@@ -53,11 +54,9 @@ class SigninForm extends Component {
           autoComplete="new-password"
           iconElement={PasswordIcon}
         />
-        <input
-          type="submit"
-          value="Login"
-          className="btn-submit btn btn--primary"
-        />
+        <Button type="submit" variant="dark" className="form-submit-button">
+          Login
+        </Button>
       </form>
     );
   }

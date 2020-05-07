@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { SHOP_DATA } from '../../data/data';
 
 import './product-details.styles.scss';
+import Button from '../ui/button/button.component';
 
 const ProductDetails = () => {
   const { collectionId, productId } = useParams();
@@ -19,7 +20,11 @@ const ProductDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [collectionId, productId]);
 
-  if (!product) return null;
+  const onAddToBag = () => {
+    console.log(`Product ${productId} Added to bag`);
+  };
+
+  if (!product) return <h1>Fetching...</h1>;
   const {
     name,
     imageUrl,
@@ -40,7 +45,7 @@ const ProductDetails = () => {
         <h2 className="price">${price}</h2>
         {stock < 10 && (
           <div className="stock">
-            <span role="img" with aria-label="number of stock left">
+            <span role="img" aria-label="number of stock left">
               🔥
             </span>
             Only {stock} pcs left
@@ -58,12 +63,13 @@ const ProductDetails = () => {
             <span>Gender: </span>
             {gender.trim()}
           </div>
-          <button
-            type="button"
-            className=" btn-addToBag btn btn--dark btn--large"
+          <Button
+            variant="dark"
+            className="button-addToBag"
+            onClick={onAddToBag}
           >
             Add to bag
-          </button>
+          </Button>
           <hr className="divider" />
           <p className="description">{description}</p>
         </div>
