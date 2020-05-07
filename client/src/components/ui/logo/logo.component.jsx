@@ -2,9 +2,9 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import clsx from 'clsx';
 
-import logoGrayUrl from '../../assets/images/store/logo-gray.svg';
-import logoBlackUrl from '../../assets/images/store/logo-black.svg';
-import logoWhiteUrl from '../../assets/images/store/logo-white.svg';
+import logoGrayUrl from '../../../assets/images/logo-gray.svg';
+import logoBlackUrl from '../../../assets/images/logo-black.svg';
+import logoWhiteUrl from '../../../assets/images/logo-white.svg';
 
 import './logo.styles.scss';
 

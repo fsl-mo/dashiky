@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import Logo from '../../components/logo/logo.component';
+import Logo from '../../components/ui/logo/logo.component';
 import { ReactComponent as LoginIcon } from '../../assets/images/login-icon.svg';
 
 import './header.styles.scss';
