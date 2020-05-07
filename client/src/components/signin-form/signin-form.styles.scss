@@ -5,37 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	.form-content {
-		margin-bottom: 2rem;
-	}
-	.form-control {
-		height: 45px;
-		display: flex;
-		align-items: center;
-		padding: 0.5rem;
-		border: 1px solid var(--c-silver);
-		margin: 0.5rem 0;
-
-		.input-icon {
-			margin-right: 1rem;
-			width: 1.35rem;
-			height: 1.35rem;
-			line-height: 0;
-			overflow: hidden;
-			opacity: 0.7;
-		}
-		input {
-			height: 100%;
-			flex: 1;
-			border: none;
-			font-size: 1rem;
-
-			&:focus {
-				outline: none;
-			}
-			&::placeholder {
-				opacity: 0.65;
-			}
-		}
+		margin-bottom: 1rem;
 	}
 	.btn-submit {
 		margin-top: 2rem;
