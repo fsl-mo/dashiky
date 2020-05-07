@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { ReactComponent as EmailIcon } from '../../assets/images/email-icon.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/images/password-icon.svg';
-import TextField from '../ui/text-field/text-field.component';
+import InputField from '../ui/input-field/input-field.component';
 
 import './signin-form.styles.scss';
 import Button from '../ui/button/button.component';
@@ -35,7 +35,7 @@ class SigninForm extends Component {
           <h1>Sign in</h1>
           <p>Welcome Back, Please login to your account.</p>
         </div>
-        <TextField
+        <InputField
           id="email"
           name="email"
           type="email"
@@ -43,8 +43,9 @@ class SigninForm extends Component {
           onChange={this.onChange}
           placeholder="Email"
           iconElement={EmailIcon}
+          label="Email"
         />
-        <TextField
+        <InputField
           id="password"
           name="password"
           type="password"
@@ -53,7 +54,9 @@ class SigninForm extends Component {
           placeholder="Password"
           autoComplete="new-password"
           iconElement={PasswordIcon}
+          label="Password"
         />
+
         <Button type="submit" variant="dark" className="form-submit-button">
           Login
         </Button>

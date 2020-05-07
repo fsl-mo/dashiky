@@ -36,6 +36,7 @@
 	--font-family-main: 'Roboto', sans-serif;
 
 	--box-shadow-color: rgba(165, 165, 165, 0.2);
+	--c-outline: var(--c-primary) solid 1px;
 }
 
 /* layout */
@@ -103,7 +104,8 @@ a {
 	font-style: none;
 
 	&:active,
-	&:hover {
+	&:hover,
+	&:focus {
 		outline: 0;
 	}
 

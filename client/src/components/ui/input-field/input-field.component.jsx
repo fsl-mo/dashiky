@@ -2,57 +2,67 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-import './text-field.styles.scss';
+import './input-field.styles.scss';
 
-const TextField = props => {
+const InputField = props => {
   const {
-    name,
     id,
+    name,
     type = 'text',
     value = '',
     onChange,
     placeholder = '',
-    disabled,
     className,
-    autoComplete,
     size,
+    label,
+    disabled = false,
     error = false,
     iconElement: Icon,
+    ...otherProps
   } = props;
 
   return (
     <div
       className={clsx(
-        'text-field',
-        disabled && 'disabled',
+        'input-field',
         error && 'error',
+        disabled && 'disabled',
         size,
         className
       )}
     >
-      {Icon && <Icon className="text-field__icon" />}
-      <input
-        id={id}
-        name={name}
-        type={type}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        disabled={disabled}
-        autoComplete={autoComplete}
-        className="text-field__input"
-      />
+      {label && (
+        <label htmlFor={id || name} className="label">
+          {label}
+        </label>
+      )}
+
+      <div className={clsx('input-box')}>
+        {Icon && <Icon className="icon" />}
+        <input
+          id={id || name}
+          name={name}
+          type={type}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          disabled={disabled}
+          {...otherProps}
+          className="input"
+        />
+      </div>
     </div>
   );
 };
 
-TextField.propTypes = {
+InputField.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'email', 'password']),
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
   className: PropTypes.string,
@@ -60,4 +70,4 @@ TextField.propTypes = {
   size: PropTypes.oneOf(['large', 'small']),
   iconElement: PropTypes.elementType,
 };
-export default TextField;
+export default InputField;

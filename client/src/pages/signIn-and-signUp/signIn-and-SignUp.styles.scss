@@ -11,15 +11,15 @@
 		grid-template-areas: 'left right';
 		gap: 0;
 		width: 100%;
-		min-height: 600px;
 		max-width: 1024px;
+		min-height: 600px;
 		box-shadow: 0px 3px 15px var(--box-shadow-color);
-
+		overflow: hidden;
 		.card-media {
 			position: relative;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(#ffc4009a, #5c6bc0ea),
+			background: linear-gradient(#ffc4009a, #000000cb),
 				url(../../assets/images/signin-bg.jpg) no-repeat;
 			background-size: cover;
 			background-position: center center;
@@ -33,11 +33,11 @@
 
 			.card-action {
 				height: 50px;
-				margin-top: 2rem;
+				margin-top: 1.5rem;
 
 				a {
 					margin-left: 0.5rem;
-					color: var(--c-info);
+					color: var(--c-primary);
 				}
 			}
 		}
