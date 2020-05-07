@@ -15,13 +15,13 @@ const Error = () => {
           <span className="emoji" role="img" aria-label="error">
             😟
           </span>
-          {error && <span className="subHeading">ERROR {error.status}</span>}
-          <h2 className="heading">
+          {error && <h2 className="subHeading">ERROR {error.status}</h2>}
+          <div className="heading">
             ooops, Something <br />
             went wrong
-          </h2>
+          </div>
 
-          <Link to={referrer} className=" btn btn--primary">
+          <Link to={referrer} className="goBack-link">
             Go Back
           </Link>
         </div>

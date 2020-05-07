@@ -27,14 +27,12 @@
 		background-color: var(--c-primary);
 		color: var(--c-white);
 	}
-	&.secondary {
-		background-color: var(--c-secondary);
-		color: var(--c-white);
-	}
+
 	&.dark {
 		color: var(--c-white);
 		background-color: var(--c-dark);
 	}
+
 	&.light {
 		color: var(--c-secondary-text);
 		background-color: var(--c-light);

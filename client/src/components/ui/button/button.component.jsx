@@ -13,11 +13,13 @@ const Button = ({
   size,
   className,
   children,
+  onClick,
 }) => (
   <button
     id={id}
     type={type}
     disabled={disabled}
+    onClick={onClick}
     className={clsx('button', variant, size, className)}
   >
     {children}
@@ -27,11 +29,12 @@ const Button = ({
 Button.propTypes = {
   id: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  variant: PropTypes.oneOf(['primary', 'secondary', 'dark', 'light']),
+  variant: PropTypes.oneOf(['primary', 'dark', 'light']),
   disabled: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.oneOf(['large', 'small']),
   children: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Button;
