@@ -50,7 +50,7 @@ const InputField = props => {
           </label>
         )}
       </div>
-      {error && errorText && <small className="error-text">{errorText}</small>}
+      {error && <small className="error-text">{errorText}</small>}
     </div>
   );
 };
