@@ -11,14 +11,17 @@ class SigninForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      values: { email: '', password: '' },
+      errors: { email: false, password: false },
     };
   }
 
   onChange = e => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState(prevState => ({
+      ...prevState,
+      values: { ...prevState.values, [name]: value },
+    }));
   };
 
   onSubmit = e => {
@@ -27,7 +30,7 @@ class SigninForm extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { values, errors } = this.state;
 
     return (
       <form onSubmit={this.onSubmit} className="signin-form">
@@ -39,24 +42,25 @@ class SigninForm extends Component {
           id="email"
           name="email"
           type="email"
-          value={email}
-          onChange={this.onChange}
-          placeholder="Email"
-          iconElement={EmailIcon}
           label="Email"
+          value={values.email}
+          onChange={this.onChange}
+          error={errors.email}
+          iconElement={EmailIcon}
+          errorText="Must be a valid email address"
         />
         <InputField
           id="password"
           name="password"
           type="password"
-          value={password}
-          onChange={this.onChange}
-          placeholder="Password"
-          autoComplete="new-password"
-          iconElement={PasswordIcon}
           label="Password"
+          autoComplete="new-password"
+          value={values.password}
+          onChange={this.onChange}
+          error={errors.email}
+          iconElement={PasswordIcon}
+          errorText="Must be at least 6 characters long"
         />
-
         <Button type="submit" variant="dark" className="form-submit-button">
           Login
         </Button>

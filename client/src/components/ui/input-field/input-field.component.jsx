@@ -11,12 +11,12 @@ const InputField = props => {
     type = 'text',
     value = '',
     onChange,
-    placeholder = '',
     className,
     size,
     label,
     disabled = false,
     error = false,
+    errorText = '',
     iconElement: Icon,
     ...otherProps
   } = props;
@@ -27,16 +27,11 @@ const InputField = props => {
         'input-field',
         error && 'error',
         disabled && 'disabled',
+        value && 'float',
         size,
         className
       )}
     >
-      {label && (
-        <label htmlFor={id || name} className="label">
-          {label}
-        </label>
-      )}
-
       <div className={clsx('input-box')}>
         {Icon && <Icon className="icon" />}
         <input
@@ -45,12 +40,17 @@ const InputField = props => {
           type={type}
           value={value}
           onChange={onChange}
-          placeholder={placeholder}
           disabled={disabled}
-          {...otherProps}
           className="input"
+          {...otherProps}
         />
+        {label && (
+          <label htmlFor={id || name} className="label">
+            {label}
+          </label>
+        )}
       </div>
+      {error && errorText && <small className="error-text">{errorText}</small>}
     </div>
   );
 };
@@ -62,9 +62,9 @@ InputField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string,
-  placeholder: PropTypes.string,
-  disabled: PropTypes.bool,
+  errorText: PropTypes.string,
   error: PropTypes.bool,
+  disabled: PropTypes.bool,
   className: PropTypes.string,
   autoComplete: PropTypes.oneOf(['off', 'new-password']),
   size: PropTypes.oneOf(['large', 'small']),

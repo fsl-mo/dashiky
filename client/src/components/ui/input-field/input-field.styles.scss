@@ -1,24 +1,45 @@
 .input-field {
 	display: flex;
 	flex-direction: column;
-	margin: 0.5rem 0;
+	margin-bottom: 0.5rem;
 	max-width: 350px;
+	position: relative;
+	padding: 0.6rem 0;
+
+	&.float {
+		padding-top: 1.2rem;
+		padding-bottom: 0;
+		.label {
+			top: 0.5rem;
+			left: 0;
+		}
+		&:not(.disabled) .label {
+			font-weight: 400;
+		}
+	}
 
 	&.disabled {
-		.label .input-box {
+		.input-box {
 			background-color: var(--c-bright-gray);
 		}
 	}
 	&.error {
+		.input[value=''] ~ .label {
+			top: 40%;
+		}
 		.input-box {
 			border-bottom: 2px solid var(--c-danger);
 		}
 	}
 
 	.label {
-		width: 100%;
 		font-size: 1rem;
-		margin-bottom: 0.35rem;
+		font-weight: 300;
+		color: var(--c-secondary-text);
+		position: absolute;
+		top: 50%;
+		left: 2.5rem;
+		transform: translateY(-50%);
 	}
 
 	.input-box {
@@ -55,7 +76,7 @@
 				outline: none;
 			}
 			&::placeholder {
-				opacity: 0.65;
+				color: transparent;
 			}
 
 			&:disabled {
@@ -63,13 +84,25 @@
 			}
 		}
 	}
+
+	.error-text {
+		color: var(--c-danger);
+	}
 }
 
 .input-field.large {
 	max-width: 450px;
+	&.float {
+		.label {
+			left: 0;
+		}
+	}
+
 	.label {
 		font-size: 1.25rem;
+		left: 3rem;
 	}
+
 	.input-box {
 		height: 55px;
 		padding: 0.75rem;
@@ -89,8 +122,14 @@
 
 .input-field.small {
 	max-width: 250px;
+	&.float {
+		.label {
+			left: 0;
+		}
+	}
 	.label {
 		font-size: 0.85rem;
+		left: 2rem;
 	}
 	.input-box {
 		height: 35px;
