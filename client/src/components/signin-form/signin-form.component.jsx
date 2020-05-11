@@ -8,11 +8,12 @@ import Button from '../ui/button/button.component';
 import { ReactComponent as EmailIcon } from '../../assets/images/email-icon.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/images/password-icon.svg';
 import { ReactComponent as GoogleIcon } from '../../assets/images/google-icon.svg';
+import { ReactComponent as FacebookIcon } from '../../assets/images/facebook-icon.svg';
 
 import './signin-form.styles.scss';
 
 const SigninForm = () => {
-  const { SignInWithGoogle, auth } = userFirebaseAuth();
+  const { signInWithGoogle, signInWithFacebook } = userFirebaseAuth();
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
     email: '',
@@ -74,12 +75,23 @@ const SigninForm = () => {
         type="button"
         variant="light"
         onClick={() => {
-          SignInWithGoogle();
+          signInWithGoogle();
         }}
         className="button"
         iconElement={GoogleIcon}
       >
         Sign in with Google
+      </Button>
+      <Button
+        type="button"
+        variant="light"
+        onClick={() => {
+          signInWithFacebook();
+        }}
+        className="button"
+        iconElement={FacebookIcon}
+      >
+        Sign in with Facebook
       </Button>
     </form>
   );
