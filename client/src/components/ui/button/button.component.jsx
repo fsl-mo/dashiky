@@ -6,35 +6,34 @@ import PropTypes from 'prop-types';
 import './button.styles.scss';
 
 const Button = ({
-  id,
   type = 'button',
   variant,
-  disabled = false,
   size,
   className,
   children,
   onClick,
+  iconElement: Icon,
+  ...otherProps
 }) => (
   <button
-    id={id}
     type={type}
-    disabled={disabled}
     onClick={onClick}
     className={clsx('button', variant, size, className)}
+    {...otherProps}
   >
+    {Icon && <Icon className="button-icon" />}
     {children}
   </button>
 );
 
 Button.propTypes = {
-  id: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   variant: PropTypes.oneOf(['primary', 'dark', 'light']),
-  disabled: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.oneOf(['large', 'small']),
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any,
   onClick: PropTypes.func,
+  iconElement: PropTypes.elementType,
 };
 
 export default Button;

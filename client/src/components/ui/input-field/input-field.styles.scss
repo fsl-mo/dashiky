@@ -41,7 +41,9 @@
 		top: 50%;
 		left: 2.4rem;
 		opacity: 0.7;
+		pointer-events: none;
 		transform: translateY(-50%);
+		transition: 300ms ease all;
 	}
 
 	.input-box {

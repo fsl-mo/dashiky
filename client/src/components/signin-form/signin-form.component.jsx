@@ -1,85 +1,88 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-import { ReactComponent as EmailIcon } from '../../assets/images/email-icon.svg';
-import { ReactComponent as PasswordIcon } from '../../assets/images/password-icon.svg';
+import userFirebaseAuth from '../../hooks/useFirebaseAuth';
+import { validateLoginData } from '../../utils/helpers';
+
 import InputField from '../ui/input-field/input-field.component';
 import Button from '../ui/button/button.component';
-
-import { validateLoginData } from '../../utils/helpers';
+import { ReactComponent as EmailIcon } from '../../assets/images/email-icon.svg';
+import { ReactComponent as PasswordIcon } from '../../assets/images/password-icon.svg';
+import { ReactComponent as GoogleIcon } from '../../assets/images/google-icon.svg';
 
 import './signin-form.styles.scss';
 
-class SigninForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      error: {},
-    };
-  }
+const SigninForm = () => {
+  const { SignInWithGoogle, auth } = userFirebaseAuth();
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
 
-  onChange = e => {
+  const onChange = e => {
     const { name, value } = e.target;
-
-    this.setState(state => ({
-      ...state,
-      [name]: value,
-      error: { ...state.error, [name]: '' },
-    }));
+    setValues({ ...values, [name]: value });
   };
 
-  onSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault();
-    const { email, password } = this.state;
+    const { email, password } = values;
+
     // validate form values
     const { isValid, error } = validateLoginData(email, password);
     if (!isValid) {
-      this.setState({ error });
-      return;
+      setErrors({ ...error });
+    } else {
+      setErrors({});
     }
     // TODO: handle form submit
-    console.log(email, password);
   };
 
-  render() {
-    const { email, password, error } = this.state;
-
-    return (
-      <form onSubmit={this.onSubmit} noValidate className="signin-form">
-        <div className="form-content">
-          <h1>Sign in</h1>
-          <p>Welcome Back, Please login to your account.</p>
-        </div>
-        <InputField
-          id="email"
-          name="email"
-          type="email"
-          label="Email"
-          value={email}
-          onChange={this.onChange}
-          iconElement={EmailIcon}
-          error={!!error.email}
-          errorText={error.email}
-        />
-        <InputField
-          id="password"
-          name="password"
-          type="password"
-          label="Password"
-          autoComplete="new-password"
-          value={password}
-          onChange={this.onChange}
-          iconElement={PasswordIcon}
-          error={!!error.password}
-          errorText={error.password}
-        />
-        <Button type="submit" variant="dark" className="form-submit-button">
-          Login
-        </Button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={onSubmit} noValidate className="signin-form">
+      <div className="form-content">
+        <h1>Sign in</h1>
+        <p>Welcome Back, Please login to your account.</p>
+      </div>
+      <InputField
+        id="email"
+        name="email"
+        type="email"
+        label="Email"
+        value={values.email}
+        onChange={onChange}
+        iconElement={EmailIcon}
+        error={!!errors.email}
+        errorText={errors.email}
+      />
+      <InputField
+        id="password"
+        name="password"
+        type="password"
+        label="Password"
+        autoComplete="new-password"
+        value={values.password}
+        onChange={onChange}
+        iconElement={PasswordIcon}
+        error={!!errors.password}
+        errorText={errors.password}
+      />
+      <Button type="submit" variant="dark" className="button">
+        Login
+      </Button>
+      <Button
+        type="button"
+        variant="light"
+        onClick={() => {
+          SignInWithGoogle();
+        }}
+        className="button"
+        iconElement={GoogleIcon}
+      >
+        Sign in with Google
+      </Button>
+    </form>
+  );
+};
 
 export default SigninForm;
