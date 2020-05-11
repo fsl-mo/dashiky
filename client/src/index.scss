@@ -148,7 +148,8 @@ h2 {
 hr {
 	border: 0;
 	height: 1px;
-	background-color: var(--c-danger);
+	margin: 2rem 0;
+	background-color: var(--c-bright-gray);
 }
 
 input:-webkit-autofill,

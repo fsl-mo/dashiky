@@ -70,7 +70,7 @@ const ProductDetails = () => {
           >
             Add to bag
           </Button>
-          <hr className="divider" />
+          <hr />
           <p className="description">{description}</p>
         </div>
       </div>

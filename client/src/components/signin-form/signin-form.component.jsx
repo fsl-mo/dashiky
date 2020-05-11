@@ -5,7 +5,7 @@ import { ReactComponent as PasswordIcon } from '../../assets/images/password-ico
 import InputField from '../ui/input-field/input-field.component';
 import Button from '../ui/button/button.component';
 
-import { validateLoginData } from '../../utils/helperfn';
+import { validateLoginData } from '../../utils/helpers';
 
 import './signin-form.styles.scss';
 
