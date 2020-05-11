@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import useFirebaseAuth from '../../hooks/useFirebaseAuth';
+
 import Logo from '../../components/ui/logo/logo.component';
-import { ReactComponent as LoginIcon } from '../../assets/images/login-icon.svg';
 
 import './header.styles.scss';
 
 const Header = () => {
   const { pathname } = useHistory().location;
+  const { signOut, auth } = useFirebaseAuth();
   const setActiveClass = path => (pathname === path ? 'active' : '');
+
   return (
     <header>
       <Link to="/" className="app-logo">
@@ -23,11 +26,22 @@ const Header = () => {
           About
         </Link>
 
-        <div className="divider vertical" />
-        <Link to="/login" className="nav-link">
-          <LoginIcon className="icon" />
-          Sign in
-        </Link>
+        <span className="divider " />
+        {!auth.isAuthenticated ? (
+          <Link to="/login" className="nav-link">
+            Sign in
+          </Link>
+        ) : (
+          <div
+            role="presentation"
+            className="nav-link"
+            onClick={() => {
+              signOut();
+            }}
+          >
+            Sign out
+          </div>
+        )}
       </nav>
     </header>
   );

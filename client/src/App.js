@@ -4,6 +4,10 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from './layouts/header/header.component';
 import Footer from './layouts/footer/footer.component';
 
+import useFirebaseAuth from './hooks/useFirebaseAuth';
+
+import AuthRoute from './routes/AuthRoute';
+
 import HomePage from './pages/home/home.component';
 import ShopPage from './pages/shop/shop.component';
 import AboutPage from './pages/about/about.component';
@@ -17,7 +21,7 @@ const App = () => (
       <Switch>
         <Route path="/shop" component={ShopPage} />
         <Route exact path="/about" component={AboutPage} />
-        <Route exact path="/login" component={SignInAndSignUpPage} />
+        <AuthRoute exact path="/login" component={SignInAndSignUpPage} />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/error-page" component={ErrorPage} />
         <Redirect

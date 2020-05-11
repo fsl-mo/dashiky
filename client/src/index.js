@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
+import { LastLocationProvider } from 'react-router-last-location';
 
 import App from './App';
 import history from './utils/history';
@@ -10,7 +11,9 @@ import './index.scss';
 
 ReactDOM.render(
   <Router history={history}>
-    <App />
+    <LastLocationProvider>
+      <App />
+    </LastLocationProvider>
   </Router>,
   document.getElementById('root')
 );
