@@ -1,7 +1,7 @@
+@import './assets/scss/mixins.scss';
+
 /* _____ global styles  _____ */
-
 /* variables */
-
 :root {
 	--c-primary: #f0b800;
 
@@ -37,6 +37,14 @@
 
 	--box-shadow-color: rgba(165, 165, 165, 0.2);
 	--c-outline: var(--c-primary) solid 1px;
+
+	--scrollbar-size: 0.375rem;
+	--scrollbar-minlength: 1.5rem; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
+	--scrollbar-ff-width: thin; /* FF-only accepts auto, thin, none */
+	--scrollbar-track-color: transparent;
+	--scrollbar-color: rgba(0, 0, 0, 0.2);
+	--scrollbar-color-hover: rgba(0, 0, 0, 0.3);
+	--scrollbar-color-active: rgb(0, 0, 0);
 }
 
 /* layout */
@@ -59,9 +67,12 @@ html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+
+	@include thin-scrollbar();
 }
 
 body {
+	position: relative;
 	color: var(--c-secondary-text);
 	font-size: 1rem;
 	font-weight: 300;
@@ -85,6 +96,7 @@ body {
 main {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	@include thin-scrollbar();
 }
 
 ol,
