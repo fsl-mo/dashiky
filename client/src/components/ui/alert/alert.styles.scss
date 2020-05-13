@@ -4,13 +4,13 @@
 
 .alert {
 	position: relative;
-	margin: 0 0 0.25rem 1rem;
+	margin: 0 0.5rem 0.5rem 0;
 	background-color: var(--c-white);
 	border: 1px solid var(--c-bright-gray);
 	border-radius: 0.15rem;
 	box-shadow: 0px 3px 15px var(--box-shadow-color);
 
-	animation: slideIn 2s forwards 0s;
+	animation: slideInFromRight 800ms ease-in 0s normal forwards running;
 
 	&.success {
 		background-color: var(--c-success);
@@ -29,10 +29,11 @@
 	.alert-content {
 		display: flex;
 		font-size: 1rem;
-		width: 400px;
-		min-height: 50px;
+		min-width: 320px;
+		width: 100%;
+		min-height: 40px;
+		margin: 14px 0;
 		padding: 10px;
-		overflow: hidden;
 
 		.alert-icon {
 			height: 1rem;
@@ -45,10 +46,6 @@
 			flex: 1;
 			font-size: inherit;
 			margin-right: 10px;
-		}
-
-		@media only screen and (max-width: 600px) {
-			width: 100%;
 		}
 	}
 	.close-icon {
@@ -63,12 +60,17 @@
 			cursor: pointer;
 		}
 	}
+
+	@media only screen and (max-width: 720px) {
+		margin: 0;
+		min-width: 100vw;
+	}
 }
 
 #portal {
 	position: fixed;
 	bottom: 0;
-	left: 0;
+	right: 0;
 	z-index: 102;
 	max-height: 100vh;
 	overflow: hidden;

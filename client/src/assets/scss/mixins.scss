@@ -32,10 +32,10 @@
 }
 
 @mixin animations {
-	@keyframes slideIn {
+	@keyframes slideInFromRight {
 		from {
 			opacity: 0;
-			transform: translateX(-10000px);
+			transform: translateX(500px);
 		}
 		to {
 			opacity: 1;

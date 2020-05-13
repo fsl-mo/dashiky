@@ -2,7 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 0.5rem;
-	max-width: 350px;
 	position: relative;
 	padding: 0.6rem 0;
 
@@ -96,7 +95,6 @@
 }
 
 .input-field.large {
-	max-width: 450px;
 	&.float {
 		.label {
 			left: 0;
@@ -126,7 +124,6 @@
 }
 
 .input-field.small {
-	max-width: 250px;
 	&.float {
 		.label {
 			left: 0;

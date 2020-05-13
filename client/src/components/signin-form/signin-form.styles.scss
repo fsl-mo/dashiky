@@ -6,6 +6,20 @@
 	justify-content: center;
 	.form-content {
 		margin-bottom: 1rem;
+		.signIn-error-message {
+			color: var(--c-light);
+			background: var(--c-danger);
+			width: 100%;
+			min-height: 2rem;
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
+			border-radius: 3px;
+			span {
+				font-weight: 500;
+				margin-right: 10px;
+			}
+		}
 	}
 	.button {
 		margin-top: 1rem;

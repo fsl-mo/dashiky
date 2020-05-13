@@ -13,12 +13,13 @@ import './alert.styles.scss';
 const Alert = ({
   severity = 'info',
   message = '',
-  autoHideDuration = 16000,
+  autoHideDuration = 30000,
   onClose,
 }) => {
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
+    setOpen(true);
     const timeOutId = window.setTimeout(() => {
       setOpen(false);
     }, autoHideDuration);
