@@ -3,9 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './layouts/header/header.component';
 import Footer from './layouts/footer/footer.component';
-
-import useFirebaseAuth from './hooks/useFirebaseAuth';
-
 import AuthRoute from './routes/AuthRoute';
 
 import HomePage from './pages/home/home.component';

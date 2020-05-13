@@ -1,0 +1,76 @@
+@import '../../../assets/scss/mixins.scss';
+
+@include animations();
+
+.alert {
+	position: relative;
+	margin: 0 0 0.25rem 1rem;
+	background-color: var(--c-white);
+	border: 1px solid var(--c-bright-gray);
+	border-radius: 0.15rem;
+	box-shadow: 0px 3px 15px var(--box-shadow-color);
+
+	animation: slideIn 2s forwards 0s;
+
+	&.success {
+		background-color: var(--c-success);
+		color: var(--c-light);
+	}
+	&.warning {
+		background-color: var(--c-warning);
+		color: var(--c-light);
+	}
+
+	&.error {
+		background-color: var(--c-danger);
+		color: var(--c-light);
+	}
+
+	.alert-content {
+		display: flex;
+		font-size: 1rem;
+		width: 400px;
+		min-height: 50px;
+		padding: 10px;
+		overflow: hidden;
+
+		.alert-icon {
+			height: 1rem;
+			width: 1rem;
+			margin-top: 2px;
+			margin-right: 10px;
+			fill: var(--c-light);
+		}
+		.alert-message {
+			flex: 1;
+			font-size: inherit;
+			margin-right: 10px;
+		}
+
+		@media only screen and (max-width: 600px) {
+			width: 100%;
+		}
+	}
+	.close-icon {
+		height: 1rem;
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		border-radius: 50%;
+		fill: var(--c-light);
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+#portal {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 102;
+	max-height: 100vh;
+	overflow: hidden;
+	@include thin-scrollbar();
+}
