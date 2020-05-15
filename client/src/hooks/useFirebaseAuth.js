@@ -138,10 +138,18 @@ const useFirebaseAuth = () => {
       });
   };
 
+  const clearAuthErrors = () => {
+    setAuth(a => ({
+      ...a,
+      error: null,
+    }));
+  };
+
   return {
     signInWithGoogle,
     signInWithFacebook,
     signInWithEmailAndPassword,
+    clearAuthErrors,
     auth,
     signOut,
   };

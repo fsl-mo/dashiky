@@ -16,12 +16,17 @@ const Alert = ({
   autoHideDuration = 30000,
   onClose,
 }) => {
-  const [open, setOpen] = useState(true);
+  const [isAlertOpen, setIsAlertOpen] = useState(true);
+
+  const hideAlert = () => {
+    if (onClose) onClose();
+    setIsAlertOpen(false);
+  };
 
   useEffect(() => {
-    setOpen(true);
+    setIsAlertOpen(true);
     const timeOutId = window.setTimeout(() => {
-      setOpen(false);
+      hideAlert();
     }, autoHideDuration);
 
     return () => {
@@ -36,14 +41,8 @@ const Alert = ({
     return null;
   };
 
-  const closeAlert = () => {
-    if (onClose) onClose();
-    setOpen(false);
-  };
-
   const renderContent = () => {
-    if (!open) return null;
-
+    if (!isAlertOpen) return null;
     return (
       <Portal>
         <div role="alert" className={`alert ${severity} `}>
@@ -51,7 +50,7 @@ const Alert = ({
             {getIcon(severity)}
             <div className="alert-message"> {message}</div>
           </div>
-          <CloseIcon onClick={closeAlert} className="close-icon" />
+          <CloseIcon onClick={hideAlert} className="close-icon" />
         </div>
       </Portal>
     );

@@ -19,6 +19,7 @@ const SigninForm = () => {
     signInWithEmailAndPassword,
     signInWithGoogle,
     signInWithFacebook,
+    clearAuthErrors,
     auth,
   } = userFirebaseAuth();
 
@@ -51,6 +52,7 @@ const SigninForm = () => {
           <Alert
             severity="error"
             message="Sign in operation failed, Please try again. "
+            onClose={clearAuthErrors}
           />
         );
     }
