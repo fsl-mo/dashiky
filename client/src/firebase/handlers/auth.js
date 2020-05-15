@@ -42,9 +42,9 @@ export const signInWithGoogle = () =>
         console.error('Error sign-in with Google.', err);
 
         if (
-          err.emails &&
-          err.credentials &&
-          err.codes === 'auth/account-exists-with-different-credential'
+          err.email &&
+          err.credential &&
+          err.code === 'auth/account-exists-with-different-credential'
         ) {
           const user = await LinkFacebookAndGoogle(err.email, err.credential);
 
@@ -79,9 +79,9 @@ export const signInWithFacebook = () =>
         console.error('Error sign-in with Facebook.', err);
 
         if (
-          err.emails &&
-          err.credentials &&
-          err.codes === 'auth/account-exists-with-different-credential'
+          err.email &&
+          err.credential &&
+          err.code === 'auth/account-exists-with-different-credential'
         ) {
           const user = await LinkFacebookAndGoogle(err.email, err.credential);
 

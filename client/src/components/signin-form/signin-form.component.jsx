@@ -10,7 +10,6 @@ import { validateLoginData } from '../../utils/helpers';
 
 import InputField from '../ui/input-field/input-field.component';
 import Button from '../ui/button/button.component';
-import Alert from '../ui/alert/alert.component';
 
 import { ReactComponent as EmailIcon } from '../../assets/images/email-icon.svg';
 import { ReactComponent as PasswordIcon } from '../../assets/images/password-icon.svg';
@@ -42,29 +41,27 @@ const SigninForm = () => {
 
     if (isValid) {
       setLoading(true);
-      login(email, password)
-        .then(() => setLoading(false))
-        .catch(err => {
-          setLoading(false);
-          setForm(state => ({
-            ...state,
-            error: { ...JSON.parse(err.message) },
-          }));
-        });
-    } else setForm(state => ({ ...state, error }));
-  };
-
-  const signInWithProvider = callback => {
-    setLoading(true);
-    callback()
-      .then(() => setLoading(false))
-      .catch(err => {
+      login(email, password).catch(err => {
         setLoading(false);
         setForm(state => ({
           ...state,
           error: { ...JSON.parse(err.message) },
         }));
       });
+    } else {
+      setForm(state => ({ ...state, error }));
+    }
+  };
+
+  const signInWithProvider = callback => {
+    setLoading(true);
+    callback().catch(err => {
+      setLoading(false);
+      setForm(state => ({
+        ...state,
+        error: { ...JSON.parse(err.message) },
+      }));
+    });
   };
 
   const { value, error } = form;
@@ -122,26 +119,26 @@ const SigninForm = () => {
       >
         Login
       </Button>
-      <Button
-        type="button"
-        variant="light"
-        onClick={() => signInWithProvider(signInWithGoogle)}
-        className="button"
-        iconElement={GoogleIcon}
-        disabled={loading}
-      >
-        Sign in with Google
-      </Button>
-      <Button
-        type="button"
-        variant="light"
-        onClick={() => signInWithProvider(signInWithFacebook)}
-        className="button"
-        iconElement={FacebookIcon}
-        disabled={loading}
-      >
-        Sign in with Facebook
-      </Button>
+      <div className="signIn-providers">
+        <Button
+          type="button"
+          variant="light"
+          onClick={() => signInWithProvider(signInWithGoogle)}
+          className="button"
+          iconElement={GoogleIcon}
+          disabled={loading}
+          title="Sign in with google"
+        />
+        <Button
+          type="button"
+          variant="light"
+          onClick={() => signInWithProvider(signInWithFacebook)}
+          className="button"
+          iconElement={FacebookIcon}
+          disabled={loading}
+          title="Sign in with facebook"
+        />
+      </div>
       {/* {renderErrorMessage()} */}
     </form>
   );

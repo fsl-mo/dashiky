@@ -1,5 +1,5 @@
 .signin-form {
-	max-width: 400px;
+	max-width: 350px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -24,5 +24,15 @@
 	.button {
 		margin-top: 1rem;
 		min-width: 130px;
+	}
+
+	.signIn-providers {
+		display: flex;
+		.button {
+			width: 50%;
+		}
+		button:last-child {
+			margin-left: 0.25rem;
+		}
 	}
 }
