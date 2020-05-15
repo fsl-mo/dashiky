@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 
-import userFirebaseAuth from '../../hooks/useFirebaseAuth';
+import {
+  login,
+  signInWithGoogle,
+  signInWithFacebook,
+} from '../../firebase/handlers/auth';
+
 import { validateLoginData } from '../../utils/helpers';
 
 import InputField from '../ui/input-field/input-field.component';
@@ -15,63 +20,71 @@ import { ReactComponent as FacebookIcon } from '../../assets/images/facebook-ico
 import './signin-form.styles.scss';
 
 const SigninForm = () => {
-  const {
-    signInWithEmailAndPassword,
-    signInWithGoogle,
-    signInWithFacebook,
-    clearAuthErrors,
-    auth,
-  } = userFirebaseAuth();
-
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
-    values: { email: '', password: '' },
-    errors: {},
+    value: { email: '', password: '' },
+    error: null,
   });
 
   const onChange = e => {
-    const { name, value } = e.target;
-    setForm(s => ({ ...s, values: { ...s.values, [name]: value } }));
+    const { name, value: inputValue } = e.target;
+    setForm(s => ({
+      ...s,
+      value: { ...s.value, [name]: inputValue },
+    }));
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    const { email, password } = form.values;
-    // validate form values
+    const { email, password } = form.value;
+
     const { isValid, error } = validateLoginData(email, password);
-    if (!isValid) return setForm(s => ({ ...s, errors: error }));
-    setForm(s => ({ ...s, errors: {} }));
 
-    // TODO: handle form submit
-    signInWithEmailAndPassword(email, password);
+    if (isValid) {
+      setLoading(true);
+      login(email, password)
+        .then(() => setLoading(false))
+        .catch(err => {
+          setLoading(false);
+          setForm(state => ({
+            ...state,
+            error: { ...JSON.parse(err.message) },
+          }));
+        });
+    } else setForm(state => ({ ...state, error }));
   };
 
-  const renderErrorMessage = () => {
-    if (auth.error) {
-      if (auth.error.code && auth.error.code === 'auth/popup-closed-by-user')
-        return (
-          <Alert
-            severity="error"
-            message="Sign in operation failed, Please try again. "
-            onClose={clearAuthErrors}
-          />
-        );
-    }
+  const signInWithProvider = callback => {
+    setLoading(true);
+    callback()
+      .then(() => setLoading(false))
+      .catch(err => {
+        setLoading(false);
+        setForm(state => ({
+          ...state,
+          error: { ...JSON.parse(err.message) },
+        }));
+      });
   };
 
-  const { values, errors } = form;
-  console.log('0000', auth);
+  const { value, error } = form;
   return (
-    <form onSubmit={onSubmit} noValidate className="signin-form">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      autoComplete="none"
+      className="signin-form"
+    >
       <div className="form-content">
         <h1>Sign in</h1>
         <p>Welcome Back, Please login to your account.</p>
 
-        {auth.error && auth.error.signIn && (
+        {error && error.signIn && (
           <div className="signIn-error-message">
             <span role="img" aria-label="sign in error">
               🤔
             </span>
-            {auth.error.signIn}
+            {error.signIn}
           </div>
         )}
       </div>
@@ -80,11 +93,12 @@ const SigninForm = () => {
         name="email"
         type="email"
         label="Email"
-        value={values.email}
+        value={value.email}
         onChange={onChange}
         iconElement={EmailIcon}
-        error={!!errors.email}
-        errorText={errors.email}
+        error={error && !!error.email}
+        errorText={error && error.email}
+        disabled={loading}
       />
       <InputField
         id="password"
@@ -92,38 +106,43 @@ const SigninForm = () => {
         type="password"
         label="Password"
         autoComplete="new-password"
-        value={values.password}
+        value={value.password}
         onChange={onChange}
         iconElement={PasswordIcon}
-        error={!!errors.password}
-        errorText={errors.password}
+        error={error && !!error.password}
+        errorText={error && error.password}
+        disabled={loading}
       />
-      <Button type="submit" variant="dark" className="button">
+
+      <Button
+        type="submit"
+        variant="dark"
+        disabled={loading}
+        className="button"
+      >
         Login
       </Button>
       <Button
         type="button"
         variant="light"
-        onClick={() => {
-          signInWithGoogle();
-        }}
+        onClick={() => signInWithProvider(signInWithGoogle)}
         className="button"
         iconElement={GoogleIcon}
+        disabled={loading}
       >
         Sign in with Google
       </Button>
       <Button
         type="button"
         variant="light"
-        onClick={() => {
-          signInWithFacebook();
-        }}
+        onClick={() => signInWithProvider(signInWithFacebook)}
         className="button"
         iconElement={FacebookIcon}
+        disabled={loading}
       >
         Sign in with Facebook
       </Button>
-      {renderErrorMessage()}
+      {/* {renderErrorMessage()} */}
     </form>
   );
 };

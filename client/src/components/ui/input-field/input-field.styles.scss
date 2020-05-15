@@ -20,7 +20,13 @@
 
 	&.disabled {
 		.input-box {
-			background-color: var(--c-bright-gray);
+			background-color: var(--c-white);
+			.icon {
+				fill: var(--c-gray);
+			}
+			input {
+				-webkit-text-fill-color: var(--c-gray);
+			}
 		}
 	}
 	&.error {
@@ -68,7 +74,7 @@
 			opacity: 0.7;
 		}
 
-		.input {
+		input {
 			height: 100%;
 			flex: 1;
 			border: none;
@@ -81,10 +87,6 @@
 			}
 			&::placeholder {
 				color: transparent;
-			}
-
-			&:disabled {
-				background-color: transparent;
 			}
 		}
 	}
@@ -116,7 +118,7 @@
 			height: 1.5rem;
 		}
 
-		.input {
+		input {
 			padding-left: 1rem;
 			font-size: 1.25rem;
 		}
@@ -143,7 +145,7 @@
 			height: 1rem;
 		}
 
-		.input {
+		input {
 			padding-left: 0.5rem;
 			font-size: 0.85rem;
 		}

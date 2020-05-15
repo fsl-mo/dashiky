@@ -22,4 +22,6 @@ try {
   console.error('Error While Initializing Firebase', err);
 }
 
+export const { auth, firestore } = firebase;
+
 export default firebase;

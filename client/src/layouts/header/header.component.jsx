@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import { signOut } from '../../firebase/handlers/auth';
 import useFirebaseAuth from '../../hooks/useFirebaseAuth';
 
 import Logo from '../../components/ui/logo/logo.component';
@@ -9,7 +10,7 @@ import './header.styles.scss';
 
 const Header = () => {
   const { pathname } = useHistory().location;
-  const { signOut, auth } = useFirebaseAuth();
+  const { auth } = useFirebaseAuth();
   const setActiveClass = path => (pathname === path ? 'active' : '');
 
   return (
